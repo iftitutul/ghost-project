@@ -1,0 +1,32 @@
+# Starter Terrafile
+# More info: https://terraspace.cloud/docs/terrafile/
+#
+# org "boltopspro" # set default github org
+#
+# Use modules from your org
+# mod "instance", source: "terraform-aws-instance", version: "v0.1.0"
+# mod "elb", source: "terraform-aws-elb"
+#
+# Use modules and specify org explicitly
+# mod "vpc", source: "boltops-tools/terraform-aws-vpc", version: "master"
+#
+# Use modules from the Terraform registry
+# mod "sqs", source: "terraform-aws-modules/sqs/aws"
+
+# DynamoDB Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table
+mod "dynamodb_1_1_0", source: "terraform-aws-modules/dynamodb-table/aws", version: "1.1.0"
+
+# EKS Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-eks
+mod "eks_17_12_0", source: "terraform-aws-modules/eks/aws", version: "17.12.0"
+
+# IAM Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-iam
+mod "iam_4_7_0", source: "terraform-aws-modules/iam/aws", version: "4.7.0"
+
+# S3 Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
+mod "s3_2_9_0", source: "terraform-aws-modules/s3-bucket/aws", version: "2.9.0"
+
+# VPC Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-vpc
+mod "vpc_3_9_0", source: "terraform-aws-modules/vpc/aws", version: "3.9.0"
+
+# ALB Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-alb
+mod "alb_6_5_0", source: "terraform-aws-modules/alb/aws", version: "6.5.0"

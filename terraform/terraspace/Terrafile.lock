@@ -1,0 +1,37 @@
+---
+alb_6_5_0:
+  source: terraform-aws-modules/alb/aws
+  version: 6.5.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-alb
+  sha: eac30ff6ce9897a338ab3e5a2b186976594c7ab2
+dynamodb_1_1_0:
+  source: terraform-aws-modules/dynamodb-table/aws
+  version: 1.1.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-dynamodb-table
+  sha: e5ff846f3a2d6a1672c7c987f1a58ebf7a3e7d33
+eks_17_12_0:
+  source: terraform-aws-modules/eks/aws
+  version: 17.12.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-eks
+  sha: 577e16d167a20b2f7d29e7a36849bda2e964da31
+iam_4_7_0:
+  source: terraform-aws-modules/iam/aws
+  version: 4.7.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-iam
+  sha: cab883e39115c1e740bddeb8021c1a8c6f73ef52
+s3_2_9_0:
+  source: terraform-aws-modules/s3-bucket/aws
+  version: 2.9.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
+  sha: 5ac9b782f5c82b98cc7c2fcb3794f6cc8608f21a
+vpc_3_9_0:
+  source: terraform-aws-modules/vpc/aws
+  version: 3.9.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-vpc
+  sha: a93c23302d4926def5acda8b6ba707f42a1129c6
