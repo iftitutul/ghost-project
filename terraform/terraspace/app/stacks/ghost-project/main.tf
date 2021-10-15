@@ -13,6 +13,16 @@ module "vpc" {
   public_subnets      = ["20.10.11.0/24", "20.10.12.0/24", "20.10.13.0/24"]
   database_subnets    = ["20.10.21.0/24", "20.10.22.0/24", "20.10.23.0/24"]
 
+  public_subnet_tags = {
+    "kubernetes.io/cluster/${local.name}" = "shared"
+    "kubernetes.io/role/elb"              = "1"
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/cluster/${local.name}" = "shared"
+    "kubernetes.io/role/internal-elb"     = "1"
+  }
+
   create_database_subnet_route_table    = false
   
   enable_dns_hostnames = true
@@ -46,7 +56,7 @@ module "ax-cluster" {
 
   write_kubeconfig = false
   map_users        = var.map_users
-  #map_accounts     = var.map_accounts
+  map_accounts     = var.map_accounts
 }
 
 data "aws_eks_cluster" "cluster" {

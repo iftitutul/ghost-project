@@ -30,8 +30,8 @@ variable "map_users" {
 # }
 
 variable "k8s_fargate_profile" {
-    description = "Map of map of node groups to create. See node_groups module's documentation for more details"
-    type        = any
+  description = "Map of map of node groups to create. See node_groups module's documentation for more details"
+  type        = any
 }
 
 variable "k8s_service_account_name" {}

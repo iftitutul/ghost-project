@@ -12,7 +12,7 @@ eks_node_groups = {
   }
 }
 
-#map_accounts= ["070866847466"]
+map_accounts= ["070866847466"]
 map_users = [
     {
       userarn  = "arn:aws:iam::070866847466:user/iftikhar"
