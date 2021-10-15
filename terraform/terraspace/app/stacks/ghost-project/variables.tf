@@ -24,13 +24,13 @@ variable "map_users" {
   }))
 }
 
-# variable "map_accounts" {
-#   description = "Additional AWS account numbers to add to the aws-auth configmap."
-#   type        = list(string)
-# }
+variable "map_accounts" {
+  description = "Additional AWS account numbers to add to the aws-auth configmap."
+  type        = list(string)
+}
 
 variable "k8s_fargate_profile" {
-  description = "Map of map of node groups to create. See node_groups module's documentation for more details"
+  description = "Map of K8s Fargate profile to create"
   type        = any
 }
 

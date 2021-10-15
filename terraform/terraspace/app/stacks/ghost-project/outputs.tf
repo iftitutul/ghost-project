@@ -39,7 +39,17 @@ output "nat_public_ips" {
 
 ### EKS
 
+output "cluster_endpoint" {
+  description = "Endpoint for EKS control plane."
+  value       = module.ax-cluster.cluster_endpoint
+}
+
 output "eks_fargate_iam_role_name" {
   description = "IAM role name for EKS Fargate pods"
   value       = module.ax-cluster.fargate_iam_role_name
+}
+
+output "fargate_profile_arns" {
+  description = "Outputs from node groups"
+  value       = module.ax-cluster.fargate_profile_arns
 }
