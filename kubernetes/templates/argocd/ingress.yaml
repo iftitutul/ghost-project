@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1 # Use extensions/v1beta1 for Kubernetes 1.18 and older
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
+    # Use this annotation (which must match a service name) to route traffic to HTTP2backends. 
+    alb.ingress.kubernetes.io/conditions.argogrpc: |
+      [{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type","values":["application/grpc"]}}]
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-1:070866847466:certificate/30b7d005-b94f-495b-abfa-0fa2c9a4cb66'
+  name: argocd
+  namespace: argocd
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: argogrpc
+            port:
+              number: 443
+        pathType: ImplementationSpecific
+      - backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+        pathType: ImplementationSpecific

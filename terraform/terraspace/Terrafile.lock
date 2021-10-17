@@ -23,12 +23,24 @@ iam_4_7_0:
   type: registry
   url: https://github.com/terraform-aws-modules/terraform-aws-iam
   sha: cab883e39115c1e740bddeb8021c1a8c6f73ef52
+rds_3_4_0:
+  source: terraform-aws-modules/rds/aws
+  version: 3.4.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-rds
+  sha: e1772773b560c2bded9af1151ad27e3bf7c80ecf
 s3_2_9_0:
   source: terraform-aws-modules/s3-bucket/aws
   version: 2.9.0
   type: registry
   url: https://github.com/terraform-aws-modules/terraform-aws-s3-bucket
   sha: 5ac9b782f5c82b98cc7c2fcb3794f6cc8608f21a
+sg_4_4_0:
+  source: terraform-aws-modules/security-group/aws
+  version: 4.4.0
+  type: registry
+  url: https://github.com/terraform-aws-modules/terraform-aws-security-group
+  sha: d935baef6735a8d19b44af9bfe6194531606fdfe
 vpc_3_9_0:
   source: terraform-aws-modules/vpc/aws
   version: 3.9.0

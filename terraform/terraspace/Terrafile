@@ -30,3 +30,9 @@ mod "vpc_3_9_0", source: "terraform-aws-modules/vpc/aws", version: "3.9.0"
 
 # ALB Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-alb
 mod "alb_6_5_0", source: "terraform-aws-modules/alb/aws", version: "6.5.0"
+
+# RDS Module Documentation: https://github.com/terraform-aws-modules/terraform-aws-rds
+mod "rds_3_4_0", source: "terraform-aws-modules/rds/aws", version: "3.4.0"
+
+# Security Group Module Documentation: https://github.com/terraform-aws-modules/security-group
+mod "sg_4_4_0", source: "terraform-aws-modules/security-group/aws", version: "4.4.0"

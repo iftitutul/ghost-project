@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost-deployment
+  labels:
+    app: ghost-blog
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghost-blog
+  template:
+    metadata:
+      labels:
+        app: ghost-blog
+    spec:
+      containers:
+      - name: ghost-blog
+        image: ghost:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2368
+        resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
+          requests:
+            cpu: 512m
+            memory: 256Mi
+        startupProbe:
+          tcpSocket:
+            port: 2368
+          periodSeconds: 10
+          failureThreshold: 30
+        livenessProbe:
+          tcpSocket:
+            port: 2368
+          initialDelaySeconds: 30
+          periodSeconds: 90
+          timeoutSeconds: 60
+        readinessProbe:
+          tcpSocket:
+            port: 2368
+          initialDelaySeconds: 30
+          periodSeconds: 60
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 2368
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        env:
+        - name: url
+          value: "https://test-gh.augmedix.com"
+        - name: database__client
+          value: mysql
+        - name: database__connection__host
+          value: test-ghost-mysql.cyenjhoy77oj.us-east-1.rds.amazonaws.com
+        - name: database__connection__port
+          value: "3306"
+        - name: database__connection__user
+          value: test
+        - name: database__connection__password
+          value: "tt12334343"
+        - name: database__connection__database
+          value: ghostdb
+        - name: database__connection__ssl
+          value: "true"

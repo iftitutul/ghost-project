@@ -38,3 +38,25 @@ variable "k8s_service_account_name" {}
 variable "k8s_sa_oidc_iam_role_name" {}
 variable "k8s_iam_policy_arn" {}
 variable "k8s_fargate_pod_policy" {}
+
+### Security Group
+variable "sg_name" {
+  type = string
+} 
+
+variable "sg_description" {
+  type = string
+} 
+
+### RDS
+variable "rds_indentifier" {
+  type = string
+}
+
+variable "rds_name" {
+  type = string
+}
+
+variable "rds_username" {
+  type = string
+}
