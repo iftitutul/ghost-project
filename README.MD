@@ -15,4 +15,6 @@
 - For Disaster recovery, implement EKS cluster on different region and create VPC peering between them
 - Manage Kubernetes manifest deployments using Helm with ArgoCD.
 - Implement AWS Lambda functions to delete the posts.
+- Implement Monitoring solution like promethues, Cloudwatch
+- For Security, use Cloudtrail and AWS Guardduty and AWS inspector
 
