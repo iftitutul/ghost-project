@@ -14,7 +14,10 @@
   
 ## Future Scope:
 - Implement WAF to protect the Frontend Application
-- For Disaster recovery, implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's. Also, EKS cluster are running on different region and create VPC peering between them
+- Disaster recovery for region failure
+  - Implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's
+  - EKS cluster are running on different region and create VPC peering between them
+  - Use AWS MySQL Multi A-Z region for automatic failover 
 - Deploy Kubernetes manifest deployments using Helm with ArgoCD.
 - Implement AWS Lambda functions to delete the posts.
 - Implement Monitoring solution like promethues, Cloudwatch
