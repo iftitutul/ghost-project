@@ -1,5 +1,7 @@
 # DRONE Shuttles Ltd Cloud Migration (Ghost Blog)
 
+- [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
+
 - Terraform: Using Terraspace to provistion the Infrastructure like VPC,EKS, Security Group and AWS RDS (MySQL). So, it will be easily manage to multiple environments.
 
 - Helm: On EKS, install ingress controller to serve the frontend applications and kubernetes external secret to manage the secrets.
