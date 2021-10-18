@@ -1,4 +1,4 @@
-## DRONE Shuttles Ltd Cloud Migration (Ghost Blog): [Demo URL](https://test-gh.augmedix.com/)
+## Drone Shuttles Ltd Cloud Migration (Ghost Blog) on AWS: [Demo URL](https://test-gh.augmedix.com/)
 
 - [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
 
