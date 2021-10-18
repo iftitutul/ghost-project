@@ -17,6 +17,7 @@
 - Implement CI/CD solution using Jenkins/Github Actions, ECR, ArgoCD etc.
 - Implement WAF to protect the Frontend Application
 - Disaster recovery for region failure
+  - Deploy the same architecture on another region.
   - Implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's
   - EKS cluster are running on different region and create VPC peering between them
   - Use AWS MySQL Multi A-Z region for automatic failover 
