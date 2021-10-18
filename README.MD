@@ -25,7 +25,7 @@
 - Implement WAF to protect the Frontend Application
 - Disaster recovery for region failure
   - Deploy the same architecture on another region.
-  - Implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's
+  - Implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's and change GA point to AWS Route53
   - EKS cluster are running on different region and create VPC peering between them
   - Use AWS MySQL Multi A-Z region for automatic failover 
 - Deploy Kubernetes manifest deployments using Helm with ArgoCD.
