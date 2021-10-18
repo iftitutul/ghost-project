@@ -1,6 +1,6 @@
 ## Drone Shuttles Ltd Cloud Migration (Ghost Blog) on AWS: [Demo URL](https://test-gh.augmedix.com/)
 
-- <h2>[Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)</h2>
+- [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
 
 - Terraform: 
   - Using Terraspace to provistion the Infrastructure and manage the multiple AWS environments.
