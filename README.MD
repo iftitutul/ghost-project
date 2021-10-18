@@ -1,6 +1,6 @@
 ## Cloud Migration (Ghost Blog) on AWS:
 
-- [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
+- [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost%20Architecture%20on%20EKS.jpg)
 
 - Terraform: 
   - Using Terraspace to provistion the Infrastructure and manage the multiple AWS environments.
