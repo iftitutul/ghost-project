@@ -2,15 +2,22 @@
 
 - [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
 
-- Terraform: Using Terraspace to provistion the Infrastructure like VPC,EKS, Security Group and AWS RDS (MySQL). So, it will be easily manage to multiple environments.
+- Terraform: 
+  - Using Terraspace to provistion the Infrastructure and manage the multiple AWS environments.
+  - Create VPC with public, private subnet and create Nat Gateway on each availability zones.
+  - EKS deployed on Private subnet of VPC.
+  - AWS RDS deployed on Private subnet and allowed only MySQL Port (3306) within VPC.
 
-- Helm: On EKS, install ingress controller to serve the frontend applications and kubernetes external secret to manage the secrets.
+- Helm:
+  - Install AWS ALB Ingress controller to serve the frontend applications
+  - Install Kubernetes external secret to manage sensitive data like credentials.
 
 - Kubernetes: 
-  - EKS Cluster running on private subnet. so its more secure. Ghost platform deployed on EKS cluster and backend service running via AWS RDS. then frontend serve via ALB ingress Controller and it's allowed only 443 port. 
-  - Install metrics server on EKS and use horizontal pod autoscaler to manage the traffic.
+  - Ghost platform deployed on EKS cluster and backend service running via AWS RDS. then frontend serve via ALB ingress Controller and it's allowed only 443 port. 
+  - Install metrics server on EKS and use horizontal pod autoscaler to scale the traffic.
   - Create kubernetes Secret using AWS Secret Manager to manage sensitive data.
   - Install ArgoCD tool on EKS cluster.
+- Add ALB URL to the AWS Route53
   
 ## Future Scope:
 
