@@ -52,7 +52,7 @@ spec:
           periodSeconds: 3
         env:
         - name: url
-          value: "https://test-gh.augmedix.com"
+          value: "https://test-gh.example.com"
         - name: database__client
           value: mysql
         - name: database__connection__host
