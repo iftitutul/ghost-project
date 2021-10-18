@@ -1,4 +1,4 @@
-## Drone Shuttles Ltd Cloud Migration (Ghost Blog) on AWS:
+## Cloud Migration (Ghost Blog) on AWS:
 
 - [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
 
