@@ -1,4 +1,4 @@
-# DRONE Shuttles Ltd Cloud Migration (Ghost Blog)
+# DRONE Shuttles Ltd Cloud Migration (Ghost Blog): [Demo URL](https://test-gh.augmedix.com/)
 
 - [Architecture](https://github.com/iftitutul/ghost-project/blob/main/Ghost-Architecture-on-EKS.svg)
 
@@ -13,6 +13,8 @@
   - Install ArgoCD tool on EKS cluster.
   
 ## Future Scope:
+
+- Implement CI/CD solution using Jenkins/Github Actions, ECR, ArgoCD etc.
 - Implement WAF to protect the Frontend Application
 - Disaster recovery for region failure
   - Implement AWS Global Accelerator provides static IP addresses that act as a fixed entry point to both ALB's
