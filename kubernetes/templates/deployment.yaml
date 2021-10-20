@@ -15,6 +15,7 @@ spec:
       labels:
         app: ghost-blog
     spec:
+      serviceAccountName: test-eks-sa
       containers:
       - name: ghost-blog
         image: ghost:latest
@@ -52,18 +53,30 @@ spec:
           periodSeconds: 3
         env:
         - name: url
-          value: "https://test-gh.augmedix.com"
+          value: "https://test-gh.example.com"
         - name: database_client
           value: mysql
-        - name: database_connection_host
-          value: test-ghost-mysql.cyenjhoy77oj.us-east-1.rds.amazonaws.com
         - name: database_connection_port
           value: "3306"
+        - name: database_connection_host
+          valueFrom:
+            secretKeyRef:
+              name: db-external-secret
+              key: database_connection_host         
         - name: database_connection_user
-          value: test
+          valueFrom:
+            secretKeyRef:
+              name: db-external-secret
+              key: database_connection_user
         - name: database_connection_password
-          value: "tt12334343"
+          valueFrom:
+            secretKeyRef:
+              name: db-external-secret
+              key: database_connection_password
         - name: database_connection_database
-          value: ghostdb
+          valueFrom:
+            secretKeyRef:
+              name: db-external-secret
+              key: database_connection_database
         - name: database_connection_ssl
           value: "true"

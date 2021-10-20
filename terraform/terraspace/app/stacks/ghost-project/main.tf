@@ -82,7 +82,7 @@ module "iam_assumable_role_with_oidc" {
   provider_url                  = replace(module.ax-cluster.cluster_oidc_issuer_url, "https://", "")
   role_policy_arns              = var.k8s_iam_policy_arn
   #oidc_fully_qualified_subjects = ["system:serviceaccount:${"<%= Terraspace.env %>"}:${var.k8s_service_account_name}"]
-  oidc_fully_qualified_subjects = ["system:serviceaccount:${"<%= Terraspace.env %>"}:*"]
+  oidc_fully_qualified_subjects = ["system:serviceaccount:*"]
 }
 
 ### Security Group

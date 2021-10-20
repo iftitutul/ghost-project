@@ -27,7 +27,7 @@ sudo apt-get install -y kubectl
 
 ### kubectl config using AWS EKS
 
-`aws eks --profile ax-test --region us-east-1 update-kubeconfig --name test-cluster`
+`aws eks --profile <profile-name> --region <region-name> update-kubeconfig --name <eks-cluster-name>`
 
 ## Install Helm
 

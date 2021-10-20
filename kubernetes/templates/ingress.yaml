@@ -24,8 +24,8 @@ metadata:
   namespace: test
 spec:
   rules:
-  - host: test-gh.augmedix.com
-    http:
+  #host: test-gh.example.com
+  - http:
       paths:
     #   - pathType:
     #     path: /*
