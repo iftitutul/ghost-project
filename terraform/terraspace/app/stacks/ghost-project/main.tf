@@ -81,7 +81,8 @@ module "iam_assumable_role_with_oidc" {
   role_name                     = var.k8s_sa_oidc_iam_role_name
   provider_url                  = replace(module.ax-cluster.cluster_oidc_issuer_url, "https://", "")
   role_policy_arns              = var.k8s_iam_policy_arn
-  oidc_fully_qualified_subjects = ["system:serviceaccount:${"<%= Terraspace.env %>"}:${var.k8s_service_account_name}"]
+  #oidc_fully_qualified_subjects = ["system:serviceaccount:${"<%= Terraspace.env %>"}:${var.k8s_service_account_name}"]
+  oidc_fully_qualified_subjects = ["system:serviceaccount:${"<%= Terraspace.env %>"}:*"]
 }
 
 ### Security Group
@@ -104,12 +105,15 @@ module "security_group" {
   ]
 }
 
-### Random Passport Generate
-# resource "random_password" "rds_password" {
-#   length           = 16
-#   special          = true
-#   override_special = "_%@"
-# }
+# Generate Random Passport
+resource "random_password" "rds_password" {
+  length           = 24
+  special          = true
+  upper            = true
+  number           = true
+  lower            = true
+  override_special = "_%@"
+}
 
 ### RDS
 module "db" {
@@ -122,7 +126,7 @@ module "db" {
   engine_version       = "8.0.20"
   family               = "mysql8.0" # DB parameter group
   major_engine_version = "8.0"      # DB option group
-  instance_class       = "db.t3.large"
+  instance_class       = var.rds_instance_type
 
   allocated_storage     = 20
   max_allocated_storage = 100
@@ -130,11 +134,10 @@ module "db" {
 
   name     = var.rds_name
   username = var.rds_username
-  #password = random_password.rds_password.result
-  password = "tt12334343"
+  password = random_password.rds_password.result
   port     = 3306
 
-  multi_az               = true
+  multi_az               = false
   subnet_ids             = module.vpc.database_subnets
   vpc_security_group_ids = [module.security_group.security_group_id]
 
@@ -146,9 +149,9 @@ module "db" {
   skip_final_snapshot     = true
   deletion_protection     = false
 
-  performance_insights_enabled          = true
-  performance_insights_retention_period = 7
-  create_monitoring_role                = false
+  //performance_insights_enabled          = true
+  //performance_insights_retention_period = 7
+  //create_monitoring_role                = true
   //monitoring_interval                   = 60
 
   parameters = [
@@ -174,4 +177,25 @@ module "db" {
   db_subnet_group_tags = {
     "Sensitive" = "high"
   }
+}
+
+### AWS Secret Manager
+resource "aws_secretsmanager_secret" "rds_credentials_secret" {
+  name = var.aws_secret_manager_name
+
+}
+
+resource "aws_secretsmanager_secret_version" "rds_credentials_secret_version" {
+  secret_id     = aws_secretsmanager_secret.rds_credentials_secret.id
+  secret_string = <<EOF
+{
+  "username": "${module.db.db_instance_username}",
+  "password": "${random_password.rds_password.result}",
+  "engine": "mysql",
+  "host": "${module.db.db_instance_address}",
+  "port": "${module.db.db_instance_port}",
+  "dbname": "${module.db.db_instance_name}",
+  "dbInstanceIdentifier": "${module.db.db_instance_id}"
+}
+EOF
 }

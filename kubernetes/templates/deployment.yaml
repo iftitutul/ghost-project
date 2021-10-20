@@ -52,18 +52,18 @@ spec:
           periodSeconds: 3
         env:
         - name: url
-          value: "https://test-gh.example.com"
-        - name: database__client
+          value: "https://test-gh.augmedix.com"
+        - name: database_client
           value: mysql
-        - name: database__connection__host
+        - name: database_connection_host
           value: test-ghost-mysql.cyenjhoy77oj.us-east-1.rds.amazonaws.com
-        - name: database__connection__port
+        - name: database_connection_port
           value: "3306"
-        - name: database__connection__user
+        - name: database_connection_user
           value: test
-        - name: database__connection__password
+        - name: database_connection_password
           value: "tt12334343"
-        - name: database__connection__database
+        - name: database_connection_database
           value: ghostdb
-        - name: database__connection__ssl
+        - name: database_connection_ssl
           value: "true"

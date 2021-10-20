@@ -42,11 +42,11 @@ variable "k8s_fargate_pod_policy" {}
 ### Security Group
 variable "sg_name" {
   type = string
-} 
+}
 
 variable "sg_description" {
   type = string
-} 
+}
 
 ### RDS
 variable "rds_indentifier" {
@@ -58,5 +58,14 @@ variable "rds_name" {
 }
 
 variable "rds_username" {
+  type = string
+}
+
+variable "rds_instance_type" {
+  type = string
+}
+
+# ### AWS Secret Manager
+variable "aws_secret_manager_name" {
   type = string
 }

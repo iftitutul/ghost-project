@@ -50,3 +50,7 @@ sg_description = "Allow MySQL Port Withing VPC"
 rds_indentifier = "<%= Terraspace.env %>-ghost-mysql"
 rds_name = "ghostdb"
 rds_username = "<%= Terraspace.env %>"
+rds_instance_type = "db.t3.micro"
+
+### AWS Secret Manager
+aws_secret_manager_name = "<%= Terraspace.env %>-eks/gh-db-secrets"

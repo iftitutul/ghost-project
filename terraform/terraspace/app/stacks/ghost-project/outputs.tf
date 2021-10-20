@@ -124,3 +124,10 @@ output "db_instance_password" {
   sensitive   = true
 }
 
+### AWS Secert Manager
+
+output "secret_manager_arn" {
+  description = "ARN of AWS secret manager"
+  value       = aws_secretsmanager_secret.rds_credentials_secret.arn
+}
+

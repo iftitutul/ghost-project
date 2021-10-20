@@ -4,7 +4,7 @@ AWS_PROFILE="ax-test"
 AWS_REGION="us-east-1"
 CLUSTER_NAME="test-cluster"
 
-POLICY_AR="arn:aws:iam::070866847466:policy/AWSLoadBalancerControllerIAMPolicy"
+POLICY_ARN="arn:aws:iam::070866847466:policy/AWSLoadBalancerControllerIAMPolicy"
 
 ## Get VPC ID
 VPC_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --profile $AWS_PROFILE --region $AWS_REGION | jq '.cluster.resourcesVpcConfig.vpcId' | sed 's/"//g')
@@ -25,7 +25,7 @@ eksctl create iamserviceaccount \
   --cluster=$CLUSTER_NAME \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
-  --attach-policy-arn=$POLICY_AR \
+  --attach-policy-arn=$POLICY_ARN \
   --override-existing-serviceaccounts \
   --approve
 
@@ -39,7 +39,6 @@ kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller/
 
 echo 'Install the helm chart if using IAM roles for service accounts. NOTE you need to specify both of the chart values serviceAccount.create=false and serviceAccount.name=aws-load-balancer-controller'
 helm upgrade -i aws-load-balancer-controller eks/aws-load-balancer-controller \
-    --set profile=$AWS_PROFILE \
     --set clusterName=$CLUSTER_NAME \
     --set serviceAccount.create=false \
     --set region=$AWS_REGION \
