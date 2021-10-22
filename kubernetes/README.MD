@@ -1,4 +1,4 @@
-## [AWS Sample Example](https://github.com/aws-quickstart/quickstart-eks-cdk-python/tree/main/demo-apps/ghost-cdk)
+## [AWS Demo: ghost-cdk](https://github.com/aws-quickstart/quickstart-eks-cdk-python/tree/main/demo-apps/ghost-cdk)
 
 ## Install kubectl using native package management
 
