@@ -12,10 +12,10 @@ eks_node_groups = {
   }
 }
 
-map_accounts= ["070866847466"]
+map_accounts= ["XXXX"]
 map_users = [
     {
-      userarn  = "arn:aws:iam::070866847466:user/iftikhar"
+      userarn  = "arn:aws:iam::XXXX:user/iftikhar"
       username = "iftikhar"
       groups   = ["system:masters"]
     }
@@ -37,7 +37,7 @@ k8s_sa_oidc_iam_role_name = "<%= Terraspace.env %>-eks-oidc-role"
 k8s_iam_policy_arn = [
   "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
   "arn:aws:iam::aws:policy/AmazonRDSFullAccess",
-  "arn:aws:iam::070866847466:policy/SecretsManagerReadPolicy"
+  "arn:aws:iam::XXXX:policy/SecretsManagerReadPolicy"
 ]
 k8s_fargate_pod_policy = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
 
