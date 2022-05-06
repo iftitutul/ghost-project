@@ -9,7 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
     alb.ingress.kubernetes.io/listen-ports:  '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
-    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-1:070866847466:certificate/30b7d005-b94f-495b-abfa-0fa2c9a4cb66'
+    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-1:XXXXX:certificate/XXXXX'
     #alb.ingress.kubernetes.io/load-balancer-attributes: access_logs.s3.enabled=true,access_logs.s3.bucket=access-logs-test-eks-gh,access_logs.s3.prefix=gh
     # Health Check Settings
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP 
