@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/conditions.argogrpc: |
       [{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type","values":["application/grpc"]}}]
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-1:070866847466:certificate/30b7d005-b94f-495b-abfa-0fa2c9a4cb66'
+    alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-1:XXXX:certificate/XXXX'
   name: argocd
   namespace: argocd
 spec:
