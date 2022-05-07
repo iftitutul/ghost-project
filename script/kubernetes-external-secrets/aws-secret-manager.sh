@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AWS_REGION="us-east-1"
-EKS_IAM_ROLE_ARN="arn:aws:iam::070866847466:role/test-eks-oidc-role"
+EKS_IAM_ROLE_ARN="arn:aws:iam::XXXX:role/test-eks-oidc-role"
 
 ## Add Helm repo
 helm repo add external-secrets https://external-secrets.github.io/kubernetes-external-secrets/
