@@ -4,7 +4,7 @@ AWS_PROFILE="ax-test"
 AWS_REGION="us-east-1"
 CLUSTER_NAME="test-cluster"
 
-POLICY_ARN="arn:aws:iam::070866847466:policy/AWSLoadBalancerControllerIAMPolicy"
+POLICY_ARN="arn:aws:iam::XXXX:policy/AWSLoadBalancerControllerIAMPolicy"
 
 ## Get VPC ID
 VPC_ID=$(aws eks describe-cluster --name $CLUSTER_NAME --profile $AWS_PROFILE --region $AWS_REGION | jq '.cluster.resourcesVpcConfig.vpcId' | sed 's/"//g')
